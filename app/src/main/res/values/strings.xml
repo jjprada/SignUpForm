@@ -11,7 +11,7 @@
     <string name="username_box">Please enter your username</string>
     <string name="password_label">Password:</string>
     <string name="password_box">Please enter your password</string>
-    <string name="confirmation_label">Confirmation:</string>
+    <string name="confirmation_label">Confirm Password:</string>
     <string name="confirmation_box">Please confirm your password</string>
     <string name="submit">Submit</string>
 

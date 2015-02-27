@@ -23,6 +23,7 @@
                 android:text="@string/username_label" />
 
             <EditText
+                android:id="@+id/username_input"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="75"
@@ -41,6 +42,7 @@
                 android:text="@string/password_label" />
 
             <EditText
+                android:id="@+id/password_input"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="75"
@@ -59,6 +61,7 @@
                 android:text="@string/confirmation_label" />
 
             <EditText
+                android:id="@+id/confirm_input"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="75"
@@ -68,6 +71,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@id/fields"

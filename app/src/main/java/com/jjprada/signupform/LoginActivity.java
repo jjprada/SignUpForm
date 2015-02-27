@@ -2,18 +2,51 @@ package com.jjprada.signupform;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class LoginActivity extends ActionBarActivity {
+
+    private  static final String TAG = "LoginActivity";
+
+    EditText mUsernameInput;
+    EditText mPasswordInput;
+    EditText mConfirmInput;
+    Button mSubmitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-    }
 
+        mUsernameInput = (EditText)(findViewById(R.id.username_input));
+        mPasswordInput = (EditText)(findViewById(R.id.password_input));
+        mConfirmInput = (EditText)(findViewById(R.id.confirm_input));
+        mSubmitButton = (Button)(findViewById(R.id.submit_button));
+
+        mSubmitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username = mUsernameInput.getText().toString();
+                String password = mPasswordInput.getText().toString();
+                String confirmation = mConfirmInput.getText().toString();
+
+                if (password.equals(confirmation)){
+                    Log.d(TAG, "Password success!!!");
+
+                    User newUser = new User(username, password);    // newUser va a ser local
+                } else {
+                    Log.d(TAG, "ERROR: Password is not equal to confirmation");
+                }
+            }
+        });
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
