@@ -1,5 +1,6 @@
 package com.jjprada.signupform;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,9 +38,11 @@ public class LoginActivity extends ActionBarActivity {
                 String confirmation = mConfirmInput.getText().toString();
 
                 if (password.equals(confirmation)){
-                    Log.d(TAG, "Password success!!!");
-
                     User newUser = new User(username, password);    // newUser va a ser local
+
+                    Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                    i.putExtra(HomeActivity.EXTRA, newUser);
+                    startActivity(i);
                 } else {
                     Log.d(TAG, "ERROR: Password is not equal to confirmation");
                 }
